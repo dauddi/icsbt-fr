@@ -5,12 +5,15 @@ import Router from 'next/router'
 import { parseCookies, setCookie, destroyCookie } from "nookies"
 import { authenticate, addUser } from "../../../src/slices/authSlice"
 import { useSelector, useDispatch } from "react-redux"
+import { Spinner } from '@chakra-ui/react'
+
 
 const Login = () => {
   const [emailInput, setEmailInput] = useState("")
   const [passwordInput, setPasswordInput] = useState("")
   const auth = useSelector(state => state.auth.isAuthenticated)
   const [isAuth, setisAuth] = useState(auth)
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const dispatch = useDispatch();
   const toast = useToast();
 
@@ -19,6 +22,8 @@ const Login = () => {
   }, [isAuth])
 
   const handleSubmit = async () => {
+    setIsSubmitting(true);
+
     const loginInfo = {
       "identifier": emailInput,
       "password": passwordInput,
@@ -57,6 +62,9 @@ const Login = () => {
           duration: 6000,
           position: 'top',
       })
+      setTimeout(() => {
+        setIsSubmitting(false)
+      }, 1000);
     }
   }
 
@@ -100,12 +108,13 @@ const Login = () => {
               <Button
                 type="submit"
                 onClick={handleSubmit}
-                bg={'blue.400'}
+                bg='blue.400'
                 color={'white'}
                 _hover={{
                   bg: 'blue.500',
-                }}>
-                Sign in
+                }}
+                disabled={isSubmitting}>
+                {isSubmitting ? <Spinner /> : 'Log In'}
               </Button>
             </Stack>
             <Stack pt={6}>

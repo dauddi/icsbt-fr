@@ -3,7 +3,7 @@ import { Box, SimpleGrid, Stat, HStack, Select, StatLabel, StatNumber, StatHelpT
 
 const FinanceStats = () => {
   return (
-    <Box w="full" bg="white" p={2} rounded="8" boxShadow='md' >
+    <Box w="full" bg="white" p={2} rounded="4" boxShadow='sm' >
       <StatGroup >
         <Stat>
           <HStack w="full" justifyContent="space-between" pr={5} >

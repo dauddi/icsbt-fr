@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useCallback, useEffect} from 'react';
 import { IconButton, Avatar, Box, CloseButton, Flex, HStack, VStack, Icon, useColorModeValue, Drawer, DrawerContent, Text, useDisclosure, BoxProps, FlexProps, Menu, MenuButton, MenuDivider, MenuItem, MenuList, color, } from '@chakra-ui/react';
 import { FiHome,FiUsers, FiFolder, FiFileText, FiDollarSign, FiEdit, FiRotateCw, FiBarChart, FiBook, FiArchive, FiSettings, FiMenu, FiBell, FiChevronDown } from 'react-icons/fi';
 import { IconType } from 'react-icons';
@@ -35,7 +35,7 @@ const SidebarWithHeader = ({ children }) => {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Box minH="100vh" bg={useColorModeValue('gray.100', 'gray.900')}>
+    <Box minH="100vh" bg={useColorModeValue('gray.50', 'gray.900')}>
       <SidebarContent
         onClose={() => onClose}
         display={{ base: 'none', md: 'block' }}

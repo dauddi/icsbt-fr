@@ -13,9 +13,9 @@ const Todo = () => {
     const dispatch = useDispatch();
 
     return (
-        <Box bg="white" w="full" boxShadow='md' rounded='8' >
+        <Box bg="white" w="full" boxShadow='sm' rounded='4' >
             <HStack w="full" spacing={{base: "auto", md: "30"}} justifyContent="space-between" p={5} pb={0} >
-                <Heading size="lg" >Tasks</Heading>
+                <Heading size="md" color="gray.600" >Tasks</Heading>
                 <Button colorScheme="teal" variant="solid" >New Task</Button>
             </HStack>
 

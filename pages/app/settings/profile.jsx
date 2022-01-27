@@ -80,7 +80,7 @@ const Profile = () => {
                 <Code w='fit-content' colorScheme='yellow' children='DELETE User Name' />
                 <Input bg='black' color='white' w='fit-content' type='text' />
               </VStack>
-              <Button w='fit-content' variant='solid' colorScheme="red" > Change Password</Button>              
+              <Button w='fit-content' variant='solid' colorScheme="red" > Delete Account </Button>              
             </VStack>
 
           </SimpleGrid>

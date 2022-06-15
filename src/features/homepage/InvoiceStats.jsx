@@ -5,7 +5,7 @@ import { Box, Stat, StatLabel, StatNumber, StatHelpText, StatGroup, HStack, Head
 const InnerStat = ({ amount, helptext, color }) => {
   return (
     <Stat paddingRight={10} paddingY={4} >
-      <StatNumber paddingY={2} > {amount} </StatNumber>
+      <StatNumber fontWeight='bold' paddingY={2} > ${amount} </StatNumber>
       <StatHelpText color={color} > {helptext} </StatHelpText>
     </Stat>
   )
